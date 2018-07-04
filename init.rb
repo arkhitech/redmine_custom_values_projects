@@ -35,4 +35,6 @@ Redmine::Plugin.register :redmine_custom_values_projects do
   requires_redmine :version_or_higher => '2.5.0'
   
   permission :manage_possible_values, {:possible_value_projects => [:manage, :destroy]}, :require => :member
+  
+  require 'redmine_custom_values_projects/hooks/model_project_copy_before_save'
 end
